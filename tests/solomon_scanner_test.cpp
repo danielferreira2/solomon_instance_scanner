@@ -23,6 +23,11 @@ void test_invalid_file() {
     assert(exception_thrown && "Expected exception was not thrown");
 }
 
+//TODO
+// imcomplete files test
+// broken files test
+// empty files test
+
 
 int main() {
     test_valid_file();

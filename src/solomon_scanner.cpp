@@ -17,6 +17,10 @@ Problem::Problem(const std::string& file_name)
     while (file >> c.id >> c.x >> c.y >> c.demand >> c.ready_time >> c.due_date >> c.service_time) {
         customers.push_back(c);
     }
+    //TODO
+    // invalidate broken, empty or imcomplete files
+    //
+
 }
 
 void Problem::skip_lines(std::ifstream& file, int n) {
