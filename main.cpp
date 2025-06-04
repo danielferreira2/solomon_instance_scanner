@@ -1,8 +1,10 @@
-#include <iostream>
+#include "solomon_scanner.h"
 
-#include <iostream>
-
-int main(){
-    std::cout<<"hello world"<<std::endl;
-    return 0;
+int main() {
+    try {
+        Problem p("examples/C101.txt"); 
+    } catch (const std::exception& e) {
+        std::cerr << "[Error]: " << e.what() << std::endl;
+    }
 }
+
