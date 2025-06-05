@@ -20,6 +20,5 @@ SolomonInstance::SolomonInstance(const std::string& file_name)
     //TODO
     // invalidate broken, empty or imcomplete files
     //
-
 }
 

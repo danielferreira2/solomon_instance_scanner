@@ -23,6 +23,9 @@ void test_invalid_file() {
     assert(exception_thrown && "Expected exception was not thrown");
 }
 
+void test_adjacency_matrix(){
+    //TODO
+}
 //TODO
 // imcomplete files test
 // broken files test

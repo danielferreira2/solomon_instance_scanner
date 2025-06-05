@@ -18,11 +18,24 @@ struct customer {
 class SolomonInstance {
 public:
     SolomonInstance(const std::string& file_name);
-
     int vehicles_num{};
     int vehicle_capacity{};
     std::vector<customer> customers;
     const std::string file_name;
+
+
+
+    template<typename DistanceFunc>
+    std::vector<std::vector<double>> adjacency_matrix(DistanceFunc func) const {
+        size_t n = customers.size();
+        std::vector<std::vector<double>> matrix(n, std::vector<double>(n));
+        for (size_t i = 0; i < n; ++i) {
+            for (size_t j = 0; j < n; ++j) {
+                matrix[i][j] = func(customers[i], customers[j]);
+            }
+        }
+        return matrix;
+    }
 
 };
 
