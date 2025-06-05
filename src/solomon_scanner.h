@@ -15,18 +15,25 @@ struct customer {
     int service_time;
 };
 
-class Problem {
+class SolomonInstance {
 public:
-    Problem(const std::string& file_name);
+    SolomonInstance(const std::string& file_name);
 
     int vehicles_num{};
     int vehicle_capacity{};
     std::vector<customer> customers;
     const std::string file_name;
 
-private:
-    static void skip_lines(std::ifstream& file, int n);
 };
+
+
+inline void skip_lines(std::ifstream& file, int n) {
+    std::string line;
+    for (int i = 0; i < n; ++i) {
+        std::getline(file, line);
+    }
+}
+
 
 inline std::ostream& operator<<(std::ostream& os, const customer& c) {
     os << "id: " << c.id 
@@ -39,7 +46,7 @@ inline std::ostream& operator<<(std::ostream& os, const customer& c) {
     return os;
 }
 
-inline std::ostream& operator<<(std::ostream& os, const Problem& p) {
+inline std::ostream& operator<<(std::ostream& os, const SolomonInstance& p) {
     os << "========== " << p.file_name << " ==========\n"
         << "vehicles fleet size: " << p.vehicles_num << "\n"
         << "vehicle capacity: " << p.vehicle_capacity << "\n";

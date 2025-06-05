@@ -1,6 +1,6 @@
 #include "solomon_scanner.h"
 
-Problem::Problem(const std::string& file_name) 
+SolomonInstance::SolomonInstance(const std::string& file_name) 
     : file_name(file_name)
 {
     std::ifstream file(file_name);
@@ -23,9 +23,3 @@ Problem::Problem(const std::string& file_name)
 
 }
 
-void Problem::skip_lines(std::ifstream& file, int n) {
-    std::string line;
-    for (int i = 0; i < n; ++i) {
-        std::getline(file, line);
-    }
-}
